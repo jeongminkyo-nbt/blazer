@@ -171,6 +171,7 @@ module Blazer
         options[link] = params[link]
       }
 
+      Rails.logger.force_info('test')
       rows = @cloud.query_total_rows(@statement, options, @query)
 
       render json: {rows_count: rows}, status: :accepted
